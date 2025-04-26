@@ -1,6 +1,6 @@
 # PUBLIC ########################################
-resource "aws_route_table" "public-rt" {
-  vpc_id = aws_vpc.ewan-vpc.id
+resource "aws_route_table" "public_rt" {
+  vpc_id = aws_vpc.vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -8,12 +8,12 @@ resource "aws_route_table" "public-rt" {
   }
 
   tags = {
-    Name = "ewan-public-rt"
+    Name = var.public_rt_name
   }
 }
 resource "aws_route_table_association" "public_assoc" {
-  subnet_id      = aws_subnet.public-subnet.id
-  route_table_id = aws_route_table.public-rt.id
+  subnet_id      = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.public_rt.id
 }
 
 # PRIVATE ############################################
