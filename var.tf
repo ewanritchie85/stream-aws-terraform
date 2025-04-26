@@ -39,6 +39,12 @@ variable "public_rt_name" {
   default     = "ewan-public-rt"
   
 }
+
+variable "private_rt_name" {
+  description = "Private Route Table name tag"
+  type        = string
+  default     = "ewan-private-rt"
+}
 variable "public_security_group_name" {
   description = "Public Security Group name tag"
   type        = string
