@@ -18,6 +18,13 @@ variable "docker_image" {
   
 }
 
+variable "container_name" {
+  description = "Container name tag"
+  type        = string
+  default     = "ewan-site"
+  
+}
+
 variable "vpc_name" {
   description = "VPC name tag"
   type        = string
@@ -94,12 +101,7 @@ variable "alb_name" {
   
 }
 
-variable "container_name" {
-  description = "Container name tag"
-  type        = string
-  default     = "ewan-site"
-  
-}
+
 
 variable "app_service_name" {
   description = "ECS Service name tag"

@@ -40,8 +40,8 @@ resource "aws_ecs_task_definition" "app_task" {
 
   container_definitions = jsonencode([
     {
-      name      = var.container_name
-      image = var.docker_image
+      name      = "${var.container_name}"
+      image = "${var.docker_image}"
       portMappings = [
         {
           containerPort = 80
