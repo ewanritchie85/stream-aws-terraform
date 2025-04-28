@@ -25,7 +25,7 @@ resource "aws_lb_listener" "alb_listener" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.alb_target_group.arn
   }
-  tags ={
+  tags = {
   }
 }
 
@@ -40,7 +40,7 @@ resource "aws_ecs_task_definition" "app_task" {
 
   container_definitions = jsonencode([
     {
-      name      = "${var.container_name}"
+      name  = "${var.container_name}"
       image = "${var.docker_image}"
       portMappings = [
         {
