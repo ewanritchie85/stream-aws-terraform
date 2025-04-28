@@ -6,6 +6,8 @@ resource "aws_lb" "alb" {
   subnets            = [aws_subnet.public_subnet_a.id,
                         aws_subnet.public_subnet_b.id]
   enable_deletion_protection = false
+  tags = {
+  }
 
 
 }

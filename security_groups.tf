@@ -14,6 +14,8 @@ resource "aws_vpc_security_group_ingress_rule" "public_http_in" {
   from_port         = 80
   to_port           = 80
   ip_protocol       = "tcp"
+  tags = {
+  }
 }
 
 resource "aws_vpc_security_group_ingress_rule" "public_ssh_in" {
@@ -22,6 +24,8 @@ resource "aws_vpc_security_group_ingress_rule" "public_ssh_in" {
   from_port         = 22
   to_port           = 22
   ip_protocol       = "tcp"
+  tags = {
+  }
 }
 
 resource "aws_vpc_security_group_egress_rule" "public_all_out" {
@@ -30,6 +34,8 @@ resource "aws_vpc_security_group_egress_rule" "public_all_out" {
   from_port         = 0
   to_port           = 65535
   ip_protocol       = "tcp"
+  tags = {
+  }
 }
 
 # PRIVATE ####################################################
@@ -48,6 +54,8 @@ resource "aws_vpc_security_group_ingress_rule" "private_http_in" {
   from_port         = 80
   to_port           = 80
   ip_protocol       = "tcp"
+  tags = {
+  }
 }
 
 resource "aws_vpc_security_group_ingress_rule" "private_ssh_in" {
@@ -56,6 +64,8 @@ resource "aws_vpc_security_group_ingress_rule" "private_ssh_in" {
   from_port         = 22
   to_port           = 22
   ip_protocol       = "tcp"
+  tags = {
+  }
 }
 
 resource "aws_vpc_security_group_egress_rule" "private_all_out" {
@@ -64,4 +74,6 @@ resource "aws_vpc_security_group_egress_rule" "private_all_out" {
   from_port         = 0
   to_port           = 65535
   ip_protocol       = "tcp"
+  tags = {
+  }
 }

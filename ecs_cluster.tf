@@ -1,5 +1,8 @@
+
 resource "aws_ecs_cluster" "ecs_cluster" {
   name = var.ecs_cluster_name
+  tags = {
+  }
 
 }
 
@@ -9,6 +12,8 @@ resource "aws_lb_target_group" "alb_target_group" {
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.vpc.id
+  tags = {
+  }
 }
 
 resource "aws_lb_listener" "alb_listener" {
@@ -19,6 +24,8 @@ resource "aws_lb_listener" "alb_listener" {
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.alb_target_group.arn
+  }
+  tags ={
   }
 }
 
@@ -43,6 +50,8 @@ resource "aws_ecs_task_definition" "app_task" {
       ]
     }
   ])
+  tags = {
+  }
 }
 
 
@@ -64,5 +73,7 @@ resource "aws_ecs_service" "app_service" {
     target_group_arn = aws_lb_target_group.alb_target_group.arn
     container_name   = var.container_name
     container_port   = 80
+  }
+  tags = {
   }
 }
