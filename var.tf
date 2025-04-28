@@ -107,3 +107,10 @@ variable "app_service_name" {
   default     = "ewan-app-service"
   
 }
+
+variable "nat_gateway_name" {
+    description = "NAT gateway name tag"
+    type = string
+    default = "ewan-nat-gateway"
+  
+}
